@@ -1,0 +1,31 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1 id="header_element"></h1> <br>
+    <button onclick="decrement_counter()">Decrement</button>
+    <button onclick="increment_counter()">Increment</button>
+    <script>
+        var count = 0
+        if (window.localStorage.getItem("count")) {
+            count = parseInt(window.localStorage.getItem("count"))
+        }
+        document.getElementById("header_element").innerText = count
+        function increment_counter() {
+            count++
+            document.getElementById("header_element").innerText = count
+            window.localStorage.setItem("count", count)
+        }
+        function decrement_counter() {
+            count--
+            document.getElementById("header_element").innerText = count
+            window.localStorage.setItem("count", count)
+        }
+
+    </script>
+</body>
+
+</html>
